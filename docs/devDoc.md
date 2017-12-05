@@ -51,3 +51,10 @@ PIP, or Python Package Index, is a packet manager used to download and install n
 ### JSON
 JSON, or JavaScript Object Notation, is an alternative to XML, which is used to store data in a text format. </br>
 We use JSON in our application to make the search function faster.
+
+### PyCharm
+PyCharm is the IDE used to code the application.
+
+### Regex
+Regex, or rational expression, is a powerful tool for string validation. </br>
+It is used in the project to check if the pictures were renamed correctly.
