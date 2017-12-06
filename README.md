@@ -3,9 +3,9 @@
  
 <img src="https://raw.githubusercontent.com/StevenAvelino/Pyctures/master/src/assets/logo.png" alt="Pyctures" height="120" width="120">
 
-<div style="display:inline;">
+<div style="display:inline!important;">
  
-<h1 style="display:inline;">Pyctures</h1>
+<h1 style="display:inline!important;">Pyctures</h1>
 
 </div>
 
