@@ -58,3 +58,20 @@ PyCharm is the IDE used to code the application.
 ### Regex
 Regex, or rational expression, is a powerful tool for string validation. </br>
 It is used in the project to check if the pictures were renamed correctly.
+
+## Conception
+### GUI
+For the GUI, we were inspired by Picasa, which was the application the user previously used to manage his pictures. </br>
+Since the number of functionalities for this project are clearly less than the ones in Picasa, our application will have a simpler look. </br>
+The main functions of the GUI are
+* Listing of the directories in the user's images directory
+* Showing the pictures contained in the selected directory
+* Search function with filters
+* Showing and possibility of modifying some properties of a selected picture
+* Zooming on a picture if double-clicked
+
+### Functions
+For the application, we wondered if using objects would be necessary, we thought that it didn't make too much sense to do so for multiple reasons
+* Application is not complex enough
+* Most functions were only parsing metadatas or handling text files
+* The only objects like entities in the application are pictures, but the properties were parsed and it didn't make sense to put these datas in an object logic
