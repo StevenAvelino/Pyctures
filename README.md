@@ -1,9 +1,9 @@
 
 <div align="center">
 
-<h1 >Pyctures</h1>
-<img src="https://raw.githubusercontent.com/StevenAvelino/Pyctures/master/src/assets/logo.png" alt="Pyctures" height="120" width="120">
 
+<img src="https://raw.githubusercontent.com/StevenAvelino/Pyctures/master/src/assets/logo.png" alt="Pyctures" height="120" width="120">
+<h1 >Pyctures</h1>
 <div>
 
 
