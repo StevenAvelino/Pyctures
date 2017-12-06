@@ -1,8 +1,14 @@
 
 <div align="center">
-  
-<img src="https://raw.githubusercontent.com/StevenAvelino/Pyctures/master/src/assets/logo.png" alt="Pyctures" height="120" width="120">
-<h1>Pyctures</h1>
+ 
+<table>
+  <tr>
+    <td><img src="https://raw.githubusercontent.com/StevenAvelino/Pyctures/master/src/assets/logo.png" alt="Pyctures" height="120" width="120"></td>
+    <td><h1>Pyctures</h1></td>
+  </tr>
+</table>
+
+
 
 </div>
 
