@@ -1,9 +1,10 @@
 
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/StevenAvelino/Pyctures/master/src/assets/logo.png" alt="Pyctures" height="120" width="120"><br/>
+<img src="https://raw.githubusercontent.com/StevenAvelino/Pyctures/master/src/assets/logo.png" alt="Pyctures" height="120" width="120">
+<h1 >Pyctures</h1><br/>
 <img src="https://forthebadge.com/images/badges/made-with-python.svg" alt="Python">
-<h1 >Pyctures</h1>
+
 
 </div>
 
