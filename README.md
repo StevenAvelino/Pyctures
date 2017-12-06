@@ -1,12 +1,12 @@
 
 <div align="center">
  
-<table cellspacing="0" cellpadding="0" style="border:none;">
-  <tr>
-    <td><img src="https://raw.githubusercontent.com/StevenAvelino/Pyctures/master/src/assets/logo.png" alt="Pyctures" height="120" width="120"></td>
-    <td><h1>Pyctures</h1></td>
-  </tr>
-</table>
+ <table cellspacing="0" cellpadding="0" style="border:none;" align="center">
+   <tr>
+     <td><img src="https://raw.githubusercontent.com/StevenAvelino/Pyctures/master/src/assets/logo.png" alt="Pyctures" height="120" width="120"></td>
+     <td><h1>Pyctures</h1></td>
+   </tr>
+ </table>
 
 
 
