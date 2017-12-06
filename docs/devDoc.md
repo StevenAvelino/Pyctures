@@ -13,6 +13,7 @@ All the requirements for the project can be found here.
 
 First : the language used : Python </br>
 We chose Python for 2 reasons :
+
 ### Simplicity
 Python is an easy language, easy to setup and with a big community around it if help is required and with many modules. </br>
 The main issue was the creation of the GUI, Python being a scripting language, it wasn't optimised to make fast or good looking GUIs. But since the project seemed pretty small, we still decided to go for Python.
@@ -59,7 +60,13 @@ PyCharm is the IDE used to code the application.
 Regex, or rational expression, is a powerful tool for string validation. </br>
 It is used in the project to check if the pictures were renamed correctly.
 
+### Git
+Since we worked on a project with more than 1 person, git is mendatory to work in a team. </br>
+Before using Github, we used Bitbucket and worked for most of the project on it. </br>
+The Bitbucket repository can be found [here](https://bitbucket.org/Aiiro/projet-python-photo)
+
 ## Conception
+
 ### GUI
 For the GUI, we were inspired by Picasa, which was the application the user previously used to manage his pictures. </br>
 Since the number of functionalities for this project are clearly less than the ones in Picasa, our application will have a simpler look. </br>
@@ -75,3 +82,8 @@ For the application, we wondered if using objects would be necessary, we thought
 * Application is not complex enough
 * Most functions were only parsing metadatas or handling text files
 * The only objects like entities in the application are pictures, but the properties were parsed and it didn't make sense to put these datas in an object logic
+
+To make the code cleaner, we seperated the GUI, functions for the GUI and other functions in 3 different files. </br>
+The GUI just calls the functions contained in the 2 other files when they are needed.
+
+## Realization
