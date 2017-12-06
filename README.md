@@ -2,9 +2,9 @@
 <div align="center">
  
 <img src="https://raw.githubusercontent.com/StevenAvelino/Pyctures/master/src/assets/logo.png" alt="Pyctures" height="120" width="120">
-
+<div style="display:inline-block;">
 <h1>Pyctures</h1>
-
+</div>
 
 
 
