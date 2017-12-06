@@ -26,6 +26,28 @@ Lors de chaque démarrage de l'application, celle-ci va contrôler le nommage de
 Si elles ne correspondent pas à notre norme, elles seront renommées comme suit : "NomDossier_YYYYMMDDhhmmss1"
 Par exemple "Venise_201711291607031". Le dernier chiffre est par défaut 1 mais si deux images ont été prises exactement en même temps, la deuxième image aura le chiffre 2.
 
- ## Navigation
+## Navigation
  
- Une fois 
+Une fois dans l'aplication, vous pouvez visualer 9 images à la fois.
+ 
+En cliquant sur les boutons Precedent/Suivant vous pouvez naviguer dans le dossier.
+ 
+Pour changer de dossier il vous suffit de cliquer sur le nom de celui-ci dans le menu de gauche, cela aura pour effet de charger les neuf premières images du dossier en question.
+ 
+## Metadonnée
+
+Pour ajouter/éditer les metadonnées d'une photo, il vous suffit de cliquer une fois dessus. Dans la partie basse de l'application vous pouvez voir les différentes metadonnées. Certaines sont éditable, vous pouvez donc modifier le texte et pour enregistrer, il faut simplement changer de champs.
+
+Les metadonnées sont stockées sur l'image, vous pouvez donc transférer vos images et les propriétés rsterot présentes
+
+> Attention les métadonnées fonctionnent uniquement avec les .jpg, .jpeg et certains .png
+ 
+## Recherche
+
+### Sans filtre
+
+
+
+### Avec filtre
+
+## Vue unique
