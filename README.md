@@ -6,11 +6,25 @@
 </div>
 
 
-Pyctures is a student project made in Python.
-The end goal of the project was to manage photos like Picasa would but with less functionality
+## Description of project
 
-## Documentations
+The goal of the project was to create a picture management application, similar to Picasa. </br>
+The main task was to handle pictures properties, or metadatas.
 
-* [User Documentation](docs/userDoc.md)
-* [Developer Documentation](docs/devDoc.md)
-* [Build Documentation](build/readme.md)
+## Organisation
+
+For the organisation of the project, we decided to split the application in half
+* GUI
+* Other functions
+
+Kévin did all the functions related to the GUI. </br>
+Steven did all the other functions.
+
+## Links
+
+* [Specifications](https://github.com/StevenAvelino/Pyctures/blob/master/project/Specifications.pdf) : You'll find all the tasks, user stories, use cases and requirements in this Word document.
+* [Initial Planification](https://github.com/StevenAvelino/Pyctures/blob/master/project/Initial_Planification.pdf) : You'll find the initial planification for the project that was made after writing the specifications
+* [Final Planification](https://github.com/StevenAvelino/Pyctures/blob/master/project/Final_Planification.pdf) : Planification made after the application was finished.
+* [Developer Documentation](https://github.com/StevenAvelino/Pyctures/blob/master/docs/devDoc.md) : All the informations needed to maintain or improve the application
+* [User Documentation](https://github.com/StevenAvelino/Pyctures/blob/master/docs/userDoc.md) : How to use the application
+
