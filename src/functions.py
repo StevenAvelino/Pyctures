@@ -47,16 +47,16 @@ def editJson(photo, folderPath, type, property):
         Then change the property with the new value
     '''
     with open(folderPath + 'search.json') as jsonFile:
-        data = json.load(jsonFile)
-    for dirs, photos in data.items():
+        jsonData = json.load(jsonFile)
+    for dirs, photos in jsonData.items():
         dirsList.append(dirs)
     for jsonDirs in dirsList:
         if jsonDirs == jsonNode:
-            for p in data[jsonDirs]:
-                if p['path'] == photo:
-                    p[type] = property
+            for picture in jsonData[jsonDirs]:
+                if picture['path'] == photo:
+                    picture[type] = property
     with open(folderPath + 'search.json', "w") as jsonFile:
-        json.dump(data, jsonFile)
+        json.dump(jsonData, jsonFile)
 
 
 '''
@@ -164,8 +164,8 @@ def setProperty(type, property, photo, folderPath):
         editJson(photo, folderPath, type, property)
 
 def getDimensions(photo):
-    im = Image.open(photo)
-    width, height = im.size
+    image = Image.open(photo)
+    width, height = image.size
     dimension = str(width)+"x"+str(height)
     return dimension
 
@@ -226,57 +226,57 @@ def searchFunction(folderPath ,search, filter):
         for jsonDirs in dirsList:
             if filter[0] == False and filter[1] == False and filter[2] == False:
                 if search in jsonDirs:
-                    for p in data[jsonDirs]:
-                        returnList.append(p['path'])
+                    for photo in data[jsonDirs]:
+                        returnList.append(photo['path'])
                 else:
-                    for p in data[jsonDirs]:
-                        if search in p['tags'] or search in p['people'] or search in p['location'] or p['comment']:
-                            returnList.append(p['path'])
+                    for photo in data[jsonDirs]:
+                        if search in photo['tags'] or search in photo['people'] or search in photo['location'] or photo['comment']:
+                            returnList.append(photo['path'])
             elif filter[0] == True and filter[1] == False and filter[2] == False:
-                for p in data[jsonDirs]:
-                    if p['people'] is not None:
-                        if search in p['people']:
-                            returnList.append(p['path'])
+                for photo in data[jsonDirs]:
+                    if photo['people'] is not None:
+                        if search in photo['people']:
+                            returnList.append(photo['path'])
             elif filter[0] == False and filter[1] == True and filter[2] == False:
                 if search == "":
-                    for p in data[jsonDirs]:
-                        if p['favorite'] == "1" :
-                            returnList.append(p['path'])
+                    for photo in data[jsonDirs]:
+                        if photo['favorite'] == "1" :
+                            returnList.append(photo['path'])
                 else:
                     if search in jsonDirs:
-                        for p in data[jsonDirs]:
-                            if p['favorite'] == "1":
-                                returnList.append(p['path'])
+                        for photo in data[jsonDirs]:
+                            if photo['favorite'] == "1":
+                                returnList.append(photo['path'])
                     else:
-                        for p in data[jsonDirs]:
-                            if search in p['tags'] or search in p['people'] or search in p['location'] or p['comment']:
-                                if p['favorite'] == "1":
-                                    returnList.append(p['path'])
+                        for photo in data[jsonDirs]:
+                            if search in photo['tags'] or search in photo['people'] or search in photo['location'] or photo['comment']:
+                                if photo['favorite'] == "1":
+                                    returnList.append(photo['path'])
             elif filter[0] == False and filter[1] == False and filter[2] == True:
-                for p in data[jsonDirs]:
-                    if p['location'] is not None:
-                        if search in p['location']:
-                            returnList.append(p['path'])
+                for photo in data[jsonDirs]:
+                    if photo['location'] is not None:
+                        if search in photo['location']:
+                            returnList.append(photo['path'])
             elif filter[0] == True and filter[1] == True and filter[2] == False:
-                for p in data[jsonDirs]:
-                    if p['people'] is not None and p['location'] is not None:
-                        if search in p['people'] and search in p['location']:
-                            returnList.append(p['path'])
+                for photo in data[jsonDirs]:
+                    if photo['people'] is not None and photo['location'] is not None:
+                        if search in photo['people'] and search in photo['location']:
+                            returnList.append(photo['path'])
             elif filter[0] == True and filter[1] == False and filter[2] == True:
-                for p in data[jsonDirs]:
-                    if p['people'] is not None and p['favorite'] is not None:
-                        if search in p['people']:
-                            returnList.append(p['path'])
+                for photo in data[jsonDirs]:
+                    if photo['people'] is not None and photo['favorite'] is not None:
+                        if search in photo['people']:
+                            returnList.append(photo['path'])
             elif filter[0] == False and filter[1] == True and filter[2] == True:
-                for p in data[jsonDirs]:
-                    if p['location'] is not None and p['favorite'] is not None:
-                        if search in p['location']:
-                            returnList.append(p['path'])
+                for photo in data[jsonDirs]:
+                    if photo['location'] is not None and photo['favorite'] is not None:
+                        if search in photo['location']:
+                            returnList.append(photo['path'])
             elif filter[0] == True and filter[1] == True and filter[2] == True:
-                for p in data[jsonDirs]:
-                    if p['location'] is not None and p['favorite'] is not None and p['people'] is not None:
-                        if search in p['location'] and search in p['people']:
-                            returnList.append(p['path'])
+                for photo in data[jsonDirs]:
+                    if photo['location'] is not None and photo['favorite'] is not None and photo['people'] is not None:
+                        if search in photo['location'] and search in photo['people']:
+                            returnList.append(photo['path'])
     return returnList
 
 
@@ -286,51 +286,29 @@ def searchFunction(folderPath ,search, filter):
     If the file already exists, the function will compare the existing directories and the nodes in the Json file
 '''
 def generateJson(folderPath):
-    if not (os.path.exists(folderPath + "search.json")):
-        data = {}
-        regex = re.compile('([a-zA-Z\-\_]+_\d{15}.\w+)')
+    if(os.path.exists(folderPath + "search.json")):
+        os.remove(folderPath + "search.json")
 
-        for root, dirs, files in os.walk(folderPath):
-            for dir in dirs:
-                data[dir] = []
-            for file in files:
-                if regex.match(file):
-                    fileDir = file.split("_")
-                    data[fileDir[0]].append({
-                        'path': folderPath + fileDir[0] + "/" + str(file),
-                        'comment': getProperty("comment",folderPath + fileDir[0] + "/" + str(file)),
-                        'people': getProperty("people",folderPath + fileDir[0] + "/" + str(file)),
-                        'location': getProperty("location",folderPath + fileDir[0] + "/" + str(file)),
-                        'tags': getProperty("tags",folderPath + fileDir[0] + "/" + str(file)),
-                        'favorite': getProperty("favorite",folderPath + fileDir[0] + "/" + str(file))
-                    }
-                    )
 
-        with open(folderPath + 'search.json', 'wb') as jsonFile:
-            json.dump(data, codecs.getwriter('utf-8')(jsonFile), ensure_ascii=False)
-    else:
-        nodesList = []
-        dirsList = []
+    jsonData = {}
+    regex = re.compile('([a-zA-Z\-\_]+_\d{15}.\w+)')
 
-        with open(folderPath + 'search.json') as jsonFile:
-            data = json.load(jsonFile)
-        for dirs, photos in data.items():
-                nodesList.append(dirs)
-        for root, dirs, files in os.walk(folderPath):
-            for dir in dirs:
-                dirsList.append(dir)
-            for dirs in dirsList:
-                if not dirs in nodesList:
-                    data[dirs] = []
-                    for file in files:
-                        data[dirs].append({
-                            'path': folderPath + dirs + "/" + str(file),
-                            'comment': getProperty("comment", folderPath + dirs + "/" + str(file)),
-                            'people': getProperty("people", folderPath + dirs + "/" + str(file)),
-                            'location': getProperty("location", folderPath + dirs + "/" + str(file)),
-                            'tags': getProperty("tags", folderPath + dirs + "/" + str(file)),
-                            'favorite': getProperty("favorite", folderPath + dirs + "/" + str(file))
-                        }
-                        )
+    for root, dirs, files in os.walk(folderPath):
+        for dir in dirs:
+            jsonData[dir] = []
+        for file in files:
+            if regex.match(file):
+                fileDir = file.split("_")
+                jsonData[fileDir[0]].append({
+                    'path': folderPath + fileDir[0] + "/" + str(file),
+                    'comment': getProperty("comment",folderPath + fileDir[0] + "/" + str(file)),
+                    'people': getProperty("people",folderPath + fileDir[0] + "/" + str(file)),
+                    'location': getProperty("location",folderPath + fileDir[0] + "/" + str(file)),
+                    'tags': getProperty("tags",folderPath + fileDir[0] + "/" + str(file)),
+                    'favorite': getProperty("favorite",folderPath + fileDir[0] + "/" + str(file))
+                }
+                )
 
-        json.dump(data, codecs.getwriter('utf-8')(jsonFile), ensure_ascii=False)
+    with open(folderPath + 'search.json', 'wb') as jsonFile:
+        json.dump(jsonData, codecs.getwriter('utf-8')(jsonFile), ensure_ascii=False)
+
