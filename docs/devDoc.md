@@ -21,7 +21,7 @@ The main issue was the creation of the GUI, Python being a scripting language, i
 ### Learning
 Steven had some experience with Python, but Kevin didn't have any. The project being small, we thought it was a good idea to learn while doing, since Python is pretty popular nowadays, learning it is a plus.
 
-## Resources
+## Modules & Tools used
 
 ### Python 2.7.x
 With Python 3.x being out for a long time and being stable, it seems weird to use Python 2.7.x </br>
@@ -85,5 +85,20 @@ For the application, we wondered if using objects would be necessary, we thought
 
 To make the code cleaner, we seperated the GUI, functions for the GUI and other functions in 3 different files. </br>
 The GUI just calls the functions contained in the 2 other files when they are needed.
+
+### How tools were used
+
+#### Pyexiv2
+This module is used to parse the metadatas of images, as said previously. </br>
+We can parse the existing values and modify them. Pyexiv2 is based on the Exif format that a lot of images format are based on (jpg for example). </br>
+A list of all the standards Exif tags can be found [here](http://www.exiv2.org/tags.html).
+
+In our application, we wanted to take already existing data from a picture, but also modify them. </br>
+The metadata we want to extract is the datetime of the picture, that will be used to rename the picture and also to show it as a property on the GUI. <7br>
+To modify metadatas, we have to refer to the list of standard Exif tags list. </br>
+The issue we encountered was the fact that we couldn't insert string in tag that wasn't an ASCII. Some properties that we wanted to put, like a comment, had a standard tag for it that were in ASCII, but most of the properties didn't have that. The only solution we found, was to use different tags that weren't coherent, but had the ASCII type.
+
+#### JSON
+We used JSON in the application to help speed up the search function 
 
 ## Realization
