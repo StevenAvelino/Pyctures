@@ -99,6 +99,6 @@ To modify metadatas, we have to refer to the list of standard Exif tags list. </
 The issue we encountered was the fact that we couldn't insert string in tag that wasn't an ASCII. Some properties that we wanted to put, like a comment, had a standard tag for it that were in ASCII, but most of the properties didn't have that. The only solution we found, was to use different tags that weren't coherent, but had the ASCII type.
 
 #### JSON
-We used JSON in the application to help speed up the search function 
+We used JSON in the application to help speed up the search function
 
 ## Realization
