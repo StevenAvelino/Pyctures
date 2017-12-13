@@ -242,18 +242,18 @@ root = Tk()
 
 root.geometry('{}x{}'.format(700, 910))
 root.minsize(width=950, height=910)
-root.iconbitmap('P:/Pycture/projet-python-photo/Documentations/logo/logo.ico')
+root.iconbitmap(os.path.dirname(sys.argv[0])+'/assets/logo.ico')
 root.title("Pyctures")
 
 photofolderPath = "C:/Users/"+getpass.getuser()+"/Pictures/"
-#rename = functions.createListPhotos(photofolderPath)
-#functions.renamePhotos(rename, photofolderPath)
+rename = functions.createListPhotos(photofolderPath)
+functions.renamePhotos(rename, photofolderPath)
 functions.generateJson(photofolderPath)
 
 
 listPhotos = []
 pathPhotos = []
-icoPath = "P:/Pycture/projet-python-photo/Downloads/MyIcons/"
+icoPath = os.path.dirname(sys.argv[0])+'/assets/'
 actualImage=""
 actualImageRange = 0
 dirs = [d for d in os.listdir(photofolderPath) if os.path.isdir(os.path.join(photofolderPath, d))]
@@ -349,8 +349,6 @@ userButt.bind('<Button-1>', lambda event, stat=0, element=userButt, enable=userI
 
 locaButt = Button(searchFrame, relief="flat", image=locaIcoDis, bd=0, bg="#0071B9")
 locaButt.bind('<Button-1>', lambda event, stat=2, element=locaButt, enable=locaIcoEna, disable=locaIcoDis: changeImageEna(element, stat, enable, disable))
-
-#histScal = Scale(searchFrame, length=75, orient=HORIZONTAL, showvalue=0, bg="#0071B9")
 
 searchentry = Entry(searchFrame, width=60)
 searchbuton = Button(searchFrame, image=searchIco, relief=FLAT, bg="#0071B9")
@@ -474,21 +472,11 @@ commInfoEntry.grid(column=4, row=5, sticky="ew")
 # Create the image gallery with a thread
 ###########################################################################################
 
-#photoCanvas.create_window(0, 0, window=canvasFrame, anchor='nw')
 
-# create a thread for not block windows and start it and create imagegallery
 loadImage(actualImageRange, actualImageRange+9)
 createImageGallery(actualImageRange, actualImageRange+9)
 
 loadImage(actualImageRange+9, actualImageRange+18)
-#firstThread = threading.Thread(name='GetImage', target=loadImage(actualImageRange+9, actualImageRange+18))
-#firstThread.start()
-
-
-###########################################################################################
-#
-# Set root properties
-###########################################################################################
 
 
 root.mainloop()
