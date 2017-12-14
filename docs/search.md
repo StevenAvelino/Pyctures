@@ -1,6 +1,6 @@
 # Search
 
-![](/assets/2017-12-14 08_26_07-Pyctures.png)
+![](/docs/assets/search.png)
 
 La recherche permet de ressortir :
 * Le nom du thème
@@ -14,7 +14,7 @@ La recherche permet de ressortir :
 
 Filters help narrow the search. When a filter is activated, its color changes slightly.
 
-![](/assets/2017-12-14 08_25_59-Pyctures.png)
+![](/docs/assets/filter.png)
 
 ### People
 
