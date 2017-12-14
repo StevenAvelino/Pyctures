@@ -7,4 +7,4 @@ You must also delete the image sample folder from Windows.
 ## Bug
 
 Currently there is a bug, if you move a photo of Venice in the Rome folder and you delete the folder Venice, the program will make a mistake at startup.
-To avoid this bug, simply rename the image to "img123" for example.
+To avoid this bug, simply rename the image to "img123" for example. 

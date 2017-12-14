@@ -26,4 +26,4 @@ If the Favorite filter is enabled the search returns only images that match your
 
 ### Location
 
-If the location filter is enabled the search returns only the results contained in the location field.
+If the location filter is enabled the search returns only the results contained in the location field. 
