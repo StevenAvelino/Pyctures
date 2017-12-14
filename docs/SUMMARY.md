@@ -2,5 +2,5 @@
 
 * [Introduction](README.md)
 * Test
-* [test2](test2.md)
+* [test2](docs/test2.md)
 
