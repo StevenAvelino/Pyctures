@@ -4,12 +4,6 @@
 The goal of the project was to create a picture management application, similar to Picasa.
 The main task was to handle pictures properties, or metadatas.
 To read the documentation with a better look and easier navigation, go to this [link](https://stevenavelino.gitbooks.io/documentation/content/)
-Single View
-
-By double-clicking on an image, it is displayed in large size.
-To exit this mode, simply select a folder or search.
-
-![](/assets/2017-12-14 08_32_00-Pyctures.png)
 
 ## Organisation
 
