@@ -16,11 +16,11 @@
 
 ## User Documentation
 
-* [Installation](installation.md)
-* [Requirements](requirements.md)
-* [Start](start.md)
-* [Navigation](navigation.md)
-* [Properties](properties.md)
-* [Search](search.md)
-* [Single View](single-view.md)
+* [Installation](docs/installation.md)
+* [Requirements](docs/requirements.md)
+* [Start](docs/start.md)
+* [Navigation](docs/navigation.md)
+* [Properties](docs/properties.md)
+* [Search](docs/search.md)
+* [Single View](docs/single-view.md)
 
