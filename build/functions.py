@@ -230,7 +230,7 @@ def searchFunction(folderPath ,search, filter):
                         returnList.append(photo['path'])
                 else:
                     for photo in data[jsonDirs]:
-                        if search in photo['tags'] or search in photo['people'] or search in photo['location'] or photo['comment']:
+                        if search in photo['tags'] or search in photo['people'] or search in photo['location'] or search in photo['comment']:
                             returnList.append(photo['path'])
             elif filter[0] == True and filter[1] == False and filter[2] == False:
                 for photo in data[jsonDirs]:
@@ -249,7 +249,7 @@ def searchFunction(folderPath ,search, filter):
                                 returnList.append(photo['path'])
                     else:
                         for photo in data[jsonDirs]:
-                            if search in photo['tags'] or search in photo['people'] or search in photo['location'] or photo['comment']:
+                            if search in photo['tags'] or search in photo['people'] or search in photo['location'] or search in photo['comment']:
                                 if photo['favorite'] == "1":
                                     returnList.append(photo['path'])
             elif filter[0] == False and filter[1] == False and filter[2] == True:
@@ -259,22 +259,22 @@ def searchFunction(folderPath ,search, filter):
                             returnList.append(photo['path'])
             elif filter[0] == True and filter[1] == True and filter[2] == False:
                 for photo in data[jsonDirs]:
-                    if photo['people'] is not None and photo['location'] is not None:
-                        if search in photo['people'] and search in photo['location']:
+                    if photo['people'] is not None and photo['favorite'] == "1":
+                        if search in photo['people']:
                             returnList.append(photo['path'])
             elif filter[0] == True and filter[1] == False and filter[2] == True:
                 for photo in data[jsonDirs]:
-                    if photo['people'] is not None and photo['favorite'] is not None:
-                        if search in photo['people']:
+                    if photo['people'] is not None and photo['location'] is not None:
+                        if search in photo['people'] and search in photo['location']:
                             returnList.append(photo['path'])
             elif filter[0] == False and filter[1] == True and filter[2] == True:
                 for photo in data[jsonDirs]:
-                    if photo['location'] is not None and photo['favorite'] is not None:
+                    if photo['location'] is not None and photo['favorite'] == "1":
                         if search in photo['location']:
                             returnList.append(photo['path'])
             elif filter[0] == True and filter[1] == True and filter[2] == True:
                 for photo in data[jsonDirs]:
-                    if photo['location'] is not None and photo['favorite'] is not None and photo['people'] is not None:
+                    if photo['location'] is not None and photo['favorite'] == "1" and photo['people'] is not None:
                         if search in photo['location'] and search in photo['people']:
                             returnList.append(photo['path'])
     return returnList
