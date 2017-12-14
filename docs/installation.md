@@ -4,3 +4,5 @@ To install Pyctures, you must download the installer from this [link](https://gi
 This is a standard Windows installation.
 
 ## Deinstallation
+
+To uninstall the Pyctures application, go to programs and functionality like a normal program
