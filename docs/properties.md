@@ -8,4 +8,4 @@ To add / edit the metadata of a photo, just click once on it. In the lower part 
 
 ![](/docs/assets/properties.png)
 
-> Attention metadata works only with .jpg, .jpeg and some .png
+> Attention metadata works only with .jpg, .jpeg and some .png 
