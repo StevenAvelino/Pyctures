@@ -30,22 +30,21 @@ If the location filter is enabled the search returns only the results contained 
 
 ### Multiple filer
 
-Vous pouvez avoir plusieurs filtres d'activé.
+You can have several filters activated.
 
 #### People and favortie
 
-Si ces filtres sont activé votre recherche va être filtrée par personne mais seulement si elle possède 1 comme favori.
+If these filters are enabled your search will be filtered by person but only if it has 1 as a favorite.
 
 #### People and location
 
-Si ces filtres sont activés votre recherche va être filtrée par personne ou par localisation
+If these filters are activated your search will be filtered by person or location.
 
 #### Location and favorite
 
-Si ces filtres sont activés votre recherche va être filtrée par localisation mais seulement si elle possède 1 comme favori.
-
+If these filters are enabled your search will be filtered by location but only if it has 1 as a favorite.
 
 #### People, favorite and location
 
-Si les trois filtres sont activés votre recherche va être filtrée par personne ou localisation
-
+Si les trois filtres sont activés votre recherche va être filtrée par personne ou localisation mais seulement si elle possède 1 comme favori.
+If all three filters are enabled your search will be filtered by person or location but only if it has 1 as a favorite
