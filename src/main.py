@@ -33,6 +33,20 @@ def changeImageEna(element, stat, enable, disable):
         element.config(image=enable)
         filterStat[stat] = True
 
+# This function change the icon of favorite and define as favorite element
+def chnageFavorite(element, enable, disable):
+    global actualImage
+    if (favoInfoEntry.get() == "0"):
+        element.config(image=enable)
+        favoInfoEntry.delete(0, END)
+        favoInfoEntry.insert(0, "1")
+        functions.setProperty("favorite", "1", actualImage, photofolderPath)
+    elif (favoInfoEntry.get() == "1"):
+        element.config(image=disable)
+        favoInfoEntry.delete(0, END)
+        favoInfoEntry.insert(0, "0")
+        functions.setProperty("favorite", "0", actualImage, photofolderPath)
+
 # This function is called when we change folder by the menu. Update display pohots
 def fileSelection(self):
     global listPhotos, pathPhotos
@@ -74,6 +88,11 @@ def getProperties(path):
     if ((functions.getProperty("favorite", path)).encode('utf-8') == "None"): favorite.set("")
     else:favorite.set(functions.getProperty("favorite", path))
     favoInfoEntry.config(textvariable=favorite)
+    if(favorite.get()=="0"):
+        favoInfoIco.config(image=favoIcoDis)
+    elif(favorite.get()=="1"):
+        favoInfoIco.config(image=favoIcoEna)
+
 
     dim = functions.getDimensions(path)
     dimInfoLabel.config(text=str(dim))
@@ -420,8 +439,12 @@ persInfoEntry = Entry(botttomFrame, text="", bg="#0071B9", relief=FLAT, justify=
 persInfoEntry.bind('<FocusOut>', lambda event, element=persInfoEntry, property="people", text=persInfoEntry.get(): saveProperty(element, property))
 
 favoTitleLabel = Label(botttomFrame, text="Favori", font=underline, bg="#0071B9", fg="#ffffff")
+favoInfoIco = Button(botttomFrame, relief="flat", image=favoIcoDis, bd=0, bg="#0071B9")
+# bind is for call a function when we do an action on a element, here is a simple click
+favoInfoIco.bind('<Button-1>', lambda event, element=favoInfoIco, enable=favoIcoEna, disable=favoIcoDis: chnageFavorite(element, enable, disable))
+
 favoInfoEntry = Entry(botttomFrame, text="", bg="#0071B9", relief=FLAT, justify=CENTER, fg="#ffffff")
-favoInfoEntry.bind('<FocusOut>', lambda event, element=favoInfoEntry, property="favorite", text=favoInfoEntry.get(): saveProperty(element, property))
+#favoInfoEntry.bind('<FocusOut>', lambda event, element=favoInfoEntry, property="favorite", text=favoInfoEntry.get(): saveProperty(element, property))
 
 dimTitleLabel = Label(botttomFrame, text="Dimensions", font=underline, bg="#0071B9", fg="#ffffff")
 dimInfoLabel = Label(botttomFrame, text="", bg="#0071B9", relief=FLAT, justify=CENTER, fg="#ffffff")
@@ -450,7 +473,7 @@ dateInfoLabel.grid(column=2, row=3, sticky="ew")
 persTitleLabel.grid(column=3, row=2, sticky="ew", padx=60)
 persInfoEntry.grid(column=3, row=3, sticky="ew")
 favoTitleLabel.grid(column=4, row=2, sticky="ew", padx=60)
-favoInfoEntry.grid(column=4, row=3, sticky="ew")
+favoInfoIco.grid(column=4, row=3)
 dimTitleLabel.grid(column=1, row=4, sticky="ew")
 dimInfoLabel.grid(column=1, row=5, sticky="ew")
 tagsTitleLabel.grid(column=2, row=4, sticky="ew")

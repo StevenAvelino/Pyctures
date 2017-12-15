@@ -8,3 +8,5 @@ src/\.idea/modules\.xml
 src/\.idea/misc\.xml
 
 src/\.idea/deployment\.xml
+
+build/
