@@ -48,6 +48,8 @@ def fileSelection(self):
 
     t = threading.Thread(target=createImageGallery(actualImageRange, actualImageRange + 9))
     t.start()
+    thread = threading.Thread(target=loadImage(actualImageRange + 9, actualImageRange + 18))
+    thread.start()
 
 # This function get properties of an image and display it
 def getProperties(path):
@@ -212,8 +214,7 @@ def previousClic():
 
 # This function search the image and display the image
 def searchClic():
-    global photofolderPath, filterStat, actualImageRange, listPhotos, pathPhotos, searchDisplay
-    searchDisplay = True
+    global photofolderPath, filterStat, actualImageRange, listPhotos, pathPhotos
     listPhotos = []
     pathPhotos = []
     actualImageRange = 0
@@ -250,7 +251,7 @@ actualImage=""
 actualImageRange = 0
 dirs = [d for d in os.listdir(photofolderPath) if os.path.isdir(os.path.join(photofolderPath, d))] # get list of directory in image folder
 currentphotofolderPath = photofolderPath+dirs[0]+"/"
-searchDisplay = False
+
 
 
 # Open all icons
