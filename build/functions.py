@@ -181,7 +181,7 @@ def getPhotoTime(photo):
 
     for key in metadata.exif_keys:
         tag = metadata[key]
-        if key == "Exif.Photo.DateTimeOriginal":
+        if key == "Exif.Photo.DateTimeDigitized":
             dateTime = tag.value
             dateTime = str(dateTime)
             return dateTime
