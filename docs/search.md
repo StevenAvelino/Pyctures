@@ -22,7 +22,7 @@ If the person filter is enabled the search returns only the results contained in
 
 ### Favorite
 
-If the Favorite filter is enabled the search returns only images that match your search and that contain 1 as the Favorite property. If there is no search, all pictures containing 1 as a favorite propety are returned.
+If the Favorite filter is enabled, the search returns only the favorite images.
 
 ### Location
 
@@ -34,7 +34,7 @@ You can have several filters activated.
 
 #### People and favorite
 
-If these filters are enabled your search will be filtered by person but only if it has 1 as a favorite.
+If these filters are enabled your search will be filtered by person but only if it is favorite image.
 
 #### People and location
 
@@ -42,9 +42,9 @@ If these filters are activated your search will be filtered by person or locatio
 
 #### Location and favorite
 
-If these filters are enabled your search will be filtered by location but only if it has 1 as a favorite.
+If these filters are enabled your search will be filtered by location but only if it is favorite image.
+
 
 #### People, favorite and location
 
-Si les trois filtres sont activés votre recherche va être filtrée par personne ou localisation mais seulement si elle possède 1 comme favori.
-If all three filters are enabled your search will be filtered by person or location but only if it has 1 as a favorite
+If all three filters are enabled your search will be filtered by person or location but only if it is favorite image.
