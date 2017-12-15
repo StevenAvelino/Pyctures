@@ -21,7 +21,7 @@ C:\Python27\python.exe setup.py build
 ```
 
 Python create with cx_freeze a folder named "build", in this folder you have main.exe.
-If you want to move the application you need all the folder build.
+For the application to work, you need the assets folder to be placed in the same folder as the main.exe. The assets folder can be found in the src folder.
 
 ## Installer
 

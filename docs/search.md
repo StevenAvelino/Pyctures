@@ -2,13 +2,13 @@
 
 ![](/docs/assets/search.png)
 
-La recherche permet de ressortir :
-* Le nom du thème
-* le champ Tags
-* le champ Personne
-* le champ Lieu
-* le champ Favori
-* le champ Commentaire
+The search function will return :
+* Folder name
+* Tags property
+* People property
+* Location property
+* Favorite property
+* Comment property
 
 ## Filter
 
@@ -28,11 +28,11 @@ If the Favorite filter is enabled the search returns only images that match your
 
 If the location filter is enabled the search returns only the results contained in the location field. 
 
-### Multiple filer
+### Multiple filters
 
 You can have several filters activated.
 
-#### People and favortie
+#### People and favorite
 
 If these filters are enabled your search will be filtered by person but only if it has 1 as a favorite.
 
