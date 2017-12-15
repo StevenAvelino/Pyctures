@@ -113,7 +113,8 @@ def renamePhotos(listPhotos, folderPath):
             metadata.read()
             for key in metadata.exif_keys:
                 tag = metadata[key]
-                if key == "Exif.Image.DateTime":
+                if key == "Exif.Photo.DateTimeDigitized":
+                    print "photo " + photo
                     dateTime = tag.value
                     dateTime = str(dateTime)
                     if dateTime == "":
@@ -135,6 +136,7 @@ def renamePhotos(listPhotos, folderPath):
                         finalName = "/"
                         finalName = finalName.join(photoPathSplit)
                         finalName.encode('utf-8')
+                        print fileName
                         if (os.path.exists(finalName + extension[len(extension) - 1])):
                             os.rename(photo, finalName + "2" + "." + extension[len(extension) - 1])
                         else:
