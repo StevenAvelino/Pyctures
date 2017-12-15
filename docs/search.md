@@ -44,7 +44,6 @@ If these filters are activated your search will be filtered by person or locatio
 
 If these filters are enabled your search will be filtered by location but only if it is favorite image.
 
-
 #### People, favorite and location
 
 If all three filters are enabled your search will be filtered by person or location but only if it is favorite image.
