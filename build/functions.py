@@ -114,7 +114,6 @@ def renamePhotos(listPhotos, folderPath):
             for key in metadata.exif_keys:
                 tag = metadata[key]
                 if key == "Exif.Photo.DateTimeDigitized":
-                    print "photo " + photo
                     dateTime = tag.value
                     dateTime = str(dateTime)
                     if dateTime == "":
