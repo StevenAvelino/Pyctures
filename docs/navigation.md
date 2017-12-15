@@ -7,6 +7,6 @@ To change the folder simply click on the name of the folder in the left menu, th
 
 ![](/docs/assets/menu.png)
 
-## Bug
+## Issue
 
 Currently, there is a bug with browsing during a search. After searching, the first nine images are displayed, but the "Suivant" button does not work. 

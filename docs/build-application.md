@@ -22,3 +22,7 @@ C:\Python27\python.exe setup.py build
 
 Python create with cx_freeze a folder named "build", in this folder you have main.exe.
 If you want to move the application you need all the folder build.
+
+## Installer
+
+To create the installer, you need to download InnoSetup. Once installed, the wizard asks what you want to put in the installer and how you want to do it. For our part, it installs the files in Program Files in a folder named Pyctures.
