@@ -1,12 +1,17 @@
-import functions
-from Tkinter import *
-from PIL import Image, ImageTk
-import os
-import tkFont
-import threading
-import getpass
+import functions                # Import the other functions
+from Tkinter import *           # Import tkinter graphic library
+from PIL import Image, ImageTk  # Import PIL for display image
+import os                       # Import os for get the image in folder
+import tkFont                   # Import tkfont for change font
+import threading                # import threading for create thread
+import getpass                  # Import getpass for get windows username
 
-#Resize image for max 200x200
+
+
+# First part is for functions the second part for display the application
+
+
+#This function get image and maxsize and return a resized image
 def resizeImage(image, maxsize):
     try:
         r1 = image.size[0]/maxsize # width ratio
@@ -18,7 +23,7 @@ def resizeImage(image, maxsize):
         print("resize error !")
     return image
 
-# Change the icon of the search bar(enabled, disabled)
+# This function change the icon of filter and updae the array filterStat
 def changeImageEna(element, stat, enable, disable):
     global filterStat
     if(filterStat[stat]==True):
@@ -27,9 +32,8 @@ def changeImageEna(element, stat, enable, disable):
     elif(filterStat[stat]==False):
         element.config(image=enable)
         filterStat[stat] = True
-    print("Per:"+str(filterStat[0])+" Favo:"+str(filterStat[1])+" Loc:"+str(filterStat[2]))
 
-#When we click on the list of file
+# This function is called when we change folder by the menu. Update display pohots
 def fileSelection(self):
     global listPhotos, pathPhotos
     w = self.widget
@@ -45,7 +49,7 @@ def fileSelection(self):
     t = threading.Thread(target=createImageGallery(actualImageRange, actualImageRange + 9))
     t.start()
 
-#get properties of an image and display it
+# This function get properties of an image and display it
 def getProperties(path):
     global sizeInfoLabel, dateInfoLabel, persInfoLabel, favoInfoLabel, dimInfoLabel, tagsInfoLabel, locaInfoLabel, propertyLabel, actualImage
     actualImage=path
@@ -87,18 +91,13 @@ def getProperties(path):
     else:comment.set(functions.getProperty("comment", path))
     commInfoEntry.config(textvariable=comment)
 
-#save property of an image
+#This function save a property of an image
 def saveProperty(element, property):
     global actualImage
     functions.setProperty(property, element.get(), actualImage, photofolderPath)
 
-#functions where the image load -> not work actually
-def load():
-    global Img
-    #panel = Label(photoCanvas, text="Chargement ...", borderwidth=0, height=300, width=300)
-    #panel.grid(row=0, column=0, padx=0, pady=0, sticky="nsew")
 
-#when we double click on an image, display only one image bigger
+#this function display only one image bigger, call when we double click on image
 def showOneImage(path):
     global photoCanvas
     photoCanvas.delete("all")
@@ -118,7 +117,7 @@ def showOneImage(path):
     photoCanvas.grid_rowconfigure(2, weight=1)
     photoCanvas.grid_columnconfigure(2, weight=1)
 
-
+# This function load image
 def loadImage(start, end, paths=1):
     global listPhotos, pathPhotos
     fullpath=False
@@ -147,7 +146,8 @@ def loadImage(start, end, paths=1):
             orImg = resizeImage(originalImg, 220)
             img = ImageTk.PhotoImage(orImg)
             listPhotos.append(img)
-# create the gallery image in the canvas
+
+# this function create the gallery image in the canvas
 def createImageGallery(start, end):
     place = {0:"nw", 1:"n", 2:"ne", 3:"w", 4:"nswe", 5:"e", 6:"sw", 7:"s", 8:"se"}
     global photoCanvas, listPhotos
@@ -185,15 +185,7 @@ def createImageGallery(start, end):
     root.geometry(str(root.winfo_width() - 1) + "x" + str(root.winfo_height() - 1))
     root.geometry(str(root.winfo_width()) + "x" + str(root.winfo_height()))
 
-def treeviewslect(self):
-    global searchDisplay
-    searchDisplay = False
-    w = self.widget
-    curItem = w.focus()
-    path = w.item(curItem)["tags"]
-    formatpath = str(path).split("'",2)[1]
-    getProperties(formatpath)
-
+# This function display the next elements, call when we click on next button
 def nextClic():
     global actualImageRange
     nbPages = 0
@@ -210,14 +202,15 @@ def nextClic():
     thread = threading.Thread(target=loadImage(actualImageRange+9, actualImageRange+18))
     thread.start()
 
+# This function display the previous elements, call when we click on previous button
 def previousClic():
     global actualImageRange
     if actualImageRange == 0: return
     actualImageRange -= 9
-    print(actualImageRange)
     createImageGallery(actualImageRange, actualImageRange + 9)
     if actualImageRange==0 : previousbutton.config(state="disabled")
 
+# This function search the image and display the image
 def searchClic():
     global photofolderPath, filterStat, actualImageRange, listPhotos, pathPhotos, searchDisplay
     searchDisplay = True
@@ -230,40 +223,38 @@ def searchClic():
 
 
 ###########################################################################################################################
-
-
-
-
-#functions.generateJson(photofolderPath)
-
+# This is the second part here, we create the display application
 
 
 root = Tk()
 
+# Configure the main frame
 root.geometry('{}x{}'.format(700, 910))
 root.minsize(width=950, height=910)
 root.iconbitmap(os.path.dirname(sys.argv[0])+'/assets/logo.ico')
 root.title("Pyctures")
 
+# Get the photo path
 photofolderPath = "C:/Users/"+getpass.getuser()+"/Pictures/"
+
+# Rename photo and generate json
 rename = functions.createListPhotos(photofolderPath)
 functions.renamePhotos(rename, photofolderPath)
 functions.generateJson(photofolderPath)
 
-
+# Define the variable i need in my program
 listPhotos = []
 pathPhotos = []
-icoPath = os.path.dirname(sys.argv[0])+'/assets/'
+icoPath = os.path.dirname(sys.argv[0])+'/assets/' # Get the icopath of app folder
 actualImage=""
 actualImageRange = 0
-dirs = [d for d in os.listdir(photofolderPath) if os.path.isdir(os.path.join(photofolderPath, d))]
+dirs = [d for d in os.listdir(photofolderPath) if os.path.isdir(os.path.join(photofolderPath, d))] # get list of directory in image folder
 currentphotofolderPath = photofolderPath+dirs[0]+"/"
 searchDisplay = False
 
 
-
-
-#Open all icons
+# Open all icons
+# For open image we need path and wit PIL we can load it in a variable
 locaIcoDis = Image.open(icoPath+"locaDis.png")
 locaIcoDis = ImageTk.PhotoImage(locaIcoDis)
 locaIcoEna = Image.open(icoPath+"locaEna.png")
@@ -279,24 +270,26 @@ userIcoDis = ImageTk.PhotoImage(userIcoDis)
 searchIco = Image.open(icoPath+"search.png").convert("RGBA")
 searchIco = ImageTk.PhotoImage(searchIco)
 
-#define main frame
+# define main frame
+# For defin an element we declare a vriable name and after it we specifie the type and type need properties like parent, size, color, ...)
 searchFrame = Frame(root, width=200, height=100, bg="#0071B9")
 centerFrame = Frame(root, width=450, height=40)
 botttomFrame = Frame(root, width=450, height=120, bg="#0071B9")
 
-#define sticky frame
+# With this we specifie what frame grow when we grow app
 root.grid_rowconfigure(1, weight=1)
 root.grid_columnconfigure(0, weight=1)
 
-#place on grid
+# The grid is a table and we put element with .grid, column number, row number and sticky is for where the element is fix in the cell
 searchFrame.grid(row=0, sticky="ew")
 centerFrame.grid(row=1, sticky="nsew")
 botttomFrame.grid(row=2, sticky="ew")
 
 ###########################################################################################
 #
-#Define the frame of root Tk
+# Define the center frame
 ###########################################################################################
+
 centerFrame.grid_rowconfigure(0, weight=1)
 centerFrame.grid_columnconfigure(1, weight=1)
 
@@ -342,6 +335,7 @@ filterStat = [False, False, False]
 
 #define buttons
 favoButt = Button(searchFrame, relief="flat", image=favoIcoDis, bd=0, bg="#0071B9")
+# bind is for call a function when we do an action on a element, here is a simple click
 favoButt.bind('<Button-1>', lambda event, stat=1, element=favoButt, enable=favoIcoEna, disable=favoIcoDis: changeImageEna(element, stat, enable, disable))
 
 userButt = Button(searchFrame, relief="flat", image=userIcoDis, bd=0, bg="#0071B9")
@@ -469,7 +463,7 @@ commInfoEntry.grid(column=4, row=5, sticky="ew")
 
 ###########################################################################################
 #
-# Create the image gallery with a thread
+# Create the first image gallery
 ###########################################################################################
 
 
