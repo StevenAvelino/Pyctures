@@ -23,31 +23,23 @@ Implement it.
 The next/previous buttons work in the simple explorer, but when you search for pictures, only a page of 9 pictures will be shown.
 The buttons work, but if you click on the next button, nothing will get shown, but you can go back to the first page.
 ####Possible solution
-
-Kévin
-
+The solution is to check whether the current view is the result of a search or only a folder. Then you can simply manage the images to display
 ### Properties of selected image can still be changed after selecting a new folder
 When You select a picture, the properties will be shown like it should. However, if the user chooses to open a new folder, the properties of the last picture will still get shown.
 It doesn't break anything, but it is still a bit weird to see as a user.
 #### Possible solution
-
-Kévin
-
+The solution is to reset the display after a search or file change
 ### Image double-click
 It isn't an application breaking issue, but when we double-click on a picture, the application will open it and display in the middle of the application.
 Issue is that it doesn't always show the full picture depending on the size of the window of the application.
 #### Possible solution
-
-Kévin
-
+The solution is to better manage the grid, it would still be necessary to investigate for a long time.
 ### Responsive layout
 Tkinter not being a really powerful GUI tool, it wasn't really made to do responsive GUIs.
 The application is somewhat responsive, but the most noticeable issue is how the pictures are displayed when the application is full screen.
 The pictures are displayed really far away from each other.
 #### Possible solution
-
-Kévin
-
+The solution is to dynamically retrieve the size of the window and then resize the images in functions
 ### Favorite
 Currently, to make a picture as a favorite, you need to set the property to 1.
 It was a quick fix, so the filter could work in time.
@@ -56,10 +48,7 @@ However, initially, the favorite should have been a true/false choice or an icon
 ## Issues resolved
 ### Displaying pictures
 Initially, we wanted to display the pictures in the middle of the application with all the pictures in the folder or returned by a search and use a scrollbar to go through the pictures.
-The issue was to make this scrollbar works.
-
-Kévin
-
+The issue was to make this scrollbar works. The fact is that with a scrollbar, you have to analyze the content of the frame to adapt the scrollregion. The solution chosen is therefore to make several pages.
 ### Search function
 The first version of the search function was just to go through all the pictures and check the metadatas + the filename.
 It worked, but it took a long time to search when the application handles a lot of pictures.

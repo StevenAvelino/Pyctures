@@ -6,4 +6,4 @@ You must also delete the image sample folder from Windows.
 
 ## Issue
 
-Currently, if you copy pictures that were already opened in the application  in an other folder (Venice to Rome, for example), the application will crash.
+Currently, if you copy pictures that were already opened in the application in an other folder (Venice to Rome, for example), the application will crash.
