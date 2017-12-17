@@ -17,11 +17,11 @@ PyForms is, just like PyQT, a framework to create GUIs with Python. It uses comp
 We considered to use this framework because of its simplicity and the possibility of using CSS to make the layout and put good looking styles on it. We scraped it because of the learning curve, just like PyQT and the fact it didn't work well on Windows with Python 2.7.x (For more information on PyForms, go [here](https://pyforms.readthedocs.io/en/v2.0/)
 
 ## Pyexiv2
-To handle the different properties we will need to get or write on pictures, metadatas are the way to go. With python, the module that is used is pyexiv2. </br>
+To handle the different properties we will need to get or write on pictures, metadatas are the way to go. With python, the module that is used is pyexiv2.
 It's a small, fast and easy module that does what we want.
 
 ## PIL
-PIL or Pillow is a popular image handler for Python. </br>
+PIL or Pillow is a popular image handler for Python.
 We need this module to handle all the operations on the pictures we're gonna use. Showing them and resizing them are the main operations we do and PIL make it really easy to do.
 
 ## PIP

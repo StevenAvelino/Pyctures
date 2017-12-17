@@ -4,8 +4,8 @@
 As in most first releases, the application still has some issues.
 ### Rename
 While the rename functions works in a simple use case, if we use it in some cases, it can cause for the application to stop.
-In a simple case, the user will create a new folder and put his pictures in the folder, then lunch the application. In this case, the application will work perfectly.
-However, if the user deletes a folder that was opened in the application and just copy/paste the pictures to another folder without renaming them to something else or replace the folder name to the new one manually, the app will crash due to the fact that the JSON generation function won't create a node for the supposed folder contained in the names of the pictures.
+In a simple case, the user will create a new folder and put his pictures in the folder, then launch the application. In this case, the application will work perfectly.
+However, if the user deletes a folder that was previously opened in the application and just copy/paste the pictures to another folder without renaming them to something else or replace the folder name to the new one manually, the app will crash due to the fact that the JSON generation function won't create a node for the supposed folder contained in the names of the pictures.
 #### Possible solution
 Currently, the rename function won't do any operations to a picture that has a filename that the will match with the regex.
 The solution would be to still check if the filename of the picture matches with the folder name.
@@ -50,9 +50,9 @@ It worked, but it took a long time to search when the application handles a lot 
 To speed up the search function, we decided to create a JSON file that will contain all the pictures with their paths and metadatas.
 The application will generate the JSON file after renaming the pictures and when the user changes the property of a picture, the JSON file will get updated as well as the metadata.
 ### Metadatas
-In itself, handle the metadatas is easy with the pyexiv2 module. However, the issue was the Exif tags to use.
+In itself, handling the metadatas is easy with the pyexiv2 module. However, the issue was the Exif tags to use.
 Exif tags follows standard naming, which means that most properties didn't have a tag with a similar name. And the other issue was the type of data we could put in these Exif tags.
-The application returns the properties as a string, which only Exif tags with they the datatype "ASCII" could store.
+The application returns the properties as a string, which only Exif tags with the datatype "ASCII" could store.
 So to solve the issue, we used tags that were rarely used and that used the "ASCII" datatype to store the properties.
 
 
