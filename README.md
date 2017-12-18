@@ -22,3 +22,4 @@ Steven did all the other functions.
 * [Specifications](https://github.com/StevenAvelino/Pyctures/blob/master/project/Specifications.pdf)
 * [Initial Planification](https://github.com/StevenAvelino/Pyctures/blob/master/project/Initial_Planification.pdf)
 * [Final Planification](https://github.com/StevenAvelino/Pyctures/blob/master/project/Final_Planification.pdf)
+* [One Page summary](https://github.com/StevenAvelino/Pyctures/blob/master/project/1Pager.pdf)
