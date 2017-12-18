@@ -3,7 +3,10 @@
 
 The goal of the project was to create a picture management application, similar to Picasa.
 The main task was to handle pictures properties, or metadatas.
-To read the documentation with a better look and easier navigation, go to this [link](https://stevenavelino.gitbooks.io/documentation/content/)
+
+## Documentation
+
+The documentation has been written in markdown and is available in the repository, however, for a better look and easier navigation, it is preferable to read it with GitBook by clicking on this [link](https://stevenavelino.gitbooks.io/documentation/content/)
 
 ## Organisation
 
