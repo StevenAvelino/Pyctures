@@ -40,6 +40,13 @@ The application is somewhat responsive, but the most noticeable issue is how the
 The pictures are displayed really far away from each other.
 #### Possible solution
 The solution is to dynamically retrieve the size of the window and then resize the images accordingly
+### Possible crash
+The application won't crash in most cases, but there is a case where the application will crash most of the time.
+If the user clicks on too many elements fast, the application won't understand what to do and will just crash.
+It doesn't damage anything, but can happen if the user get frustrated after a big search or a folder filled with big pictures.
+#### Possible solution
+One of the best solution would be to "freeze" the app when an operation is on-going, which means the user won't be able to launch other operations at the same time.
+It would also be possible to put every operation in a thread, so the different operations won't get confused with others.
 ## Issues resolved
 ### Displaying pictures
 Initially, we wanted to display the pictures in the middle of the application with all the pictures in the folder or returned by a search and use a scrollbar to go through the pictures.

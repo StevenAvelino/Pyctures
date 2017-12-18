@@ -20,3 +20,6 @@ For the application, we wondered if using objects would be necessary, we thought
 To make the code cleaner, we separated the GUI, functions for the GUI and other functions in 3 different files.
 The GUI just calls the functions contained in the 2 other files when they are needed.
 
+## Testing
+To test our application and its functions, we didn't create unit test cases or integration cases. We thought that the application was a bit small to test it that way.
+We wither opened the application and checked if the functions we were implementing were working as intended or we had a small test python file where we could test our functions without impacting the main application.
