@@ -1,7 +1,7 @@
 # Logs Book
 
 On this page you will find the logs book. We wondered how often we would document our actions. We decided to fill in the work done per week and not per day or hour.
-The reason for our choice comes from the fact that the project lasted about 3 months and that in our opinion it is not very interesting to provide specific information. For example, on November 27th I stayed 10 more minutes after class to do some documentation.
+The reason for our choice comes from the fact that the project lasted about 3 months and that in our opinion it is not very interesting to provide specific information. For example, on November 27th I stayed 10 more minutes after class to do some documentation. 
 
 |     Date    | Person |     Element     |               Description              |
 |:-----------:|:------:|:---------------:|:--------------------------------------:|
