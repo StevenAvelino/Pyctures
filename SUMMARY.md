@@ -24,3 +24,7 @@
 * [Search](docs/search.md)
 * [Single View](docs/single-view.md)
 
+## Others
+
+* [Appendix](Annexe.md)
+
