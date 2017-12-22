@@ -24,7 +24,9 @@ The JSON file also needs to include the new weather metadata on the generation o
 
 ### Metadatas
 
-First, searching for a metadata to store the property "weather" will be needed. When it's done, 3 functions will need to be changed so we can add the metadata "weather".
+First, searching for a metadata to store the property "weather" will be needed.
+If a metadata of that type doesn't exist, we can search for another metadata where we can store this new property, it would be better to find a metadata that isn't used often.
+When it's done, 3 functions will need to be changed so we can add the metadata "weather".
 * Function to get the metadata
 * Function to set the metadata
 * Function to edit the JSON
