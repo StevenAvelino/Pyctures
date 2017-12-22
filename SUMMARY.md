@@ -26,5 +26,5 @@
 
 ## Others
 
-* [Appendix](Annexe.md)
+* [Appendix](Appendix.md)
 
